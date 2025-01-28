@@ -1,11 +1,13 @@
 import { DataStoreServiceClient } from "@google-cloud/discoveryengine";
-import { project, location, collection, dataStoreId } from "./utils/loadEnv";
+import { project, location, collection, dataStoreId } from "../utils/loadEnv";
 
 type IndustryVertical =
   | "GENERIC"
   | "INDUSTRY_VERTICAL_UNSPECIFIED"
   | "MEDIA"
   | "HEALTHCARE_FHIR";
+
+type ContentConfig = "CONTENT_REQUIRED" | "CONTENT_CONFIG_UNSPECIFIED";
 
 /**
  * This snippet has been automatically generated and should be regarded as a code template only.
@@ -25,6 +27,7 @@ const parent = `projects/${project}/locations/${location}/collections/${collecti
 const dataStore = {
   displayName: dataStoreId,
   industryVertical: "GENERIC" as IndustryVertical,
+  contentConfig: "CONTENT_REQUIRED" as ContentConfig,
 };
 /**
  *  Required. The ID to use for the
@@ -62,7 +65,7 @@ async function callCreateDataStore() {
   const request = {
     parent,
     dataStore,
-    dataStoreId: dataStoreId!,
+    dataStoreId,
   };
 
   // Run request
