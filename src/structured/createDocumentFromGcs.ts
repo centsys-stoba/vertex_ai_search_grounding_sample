@@ -5,6 +5,7 @@ import {
   dataStoreId,
   collection,
   branch,
+  gcsBucketInputUrl,
 } from "../utils/loadEnv";
 
 /**
@@ -21,7 +22,7 @@ import {
  *  Cloud Storage location for the input content.
  */
 const gcsSource = {
-  inputUris: [process.env.GCS_BUCKET_INPUT_URL as string],
+  inputUris: [gcsBucketInputUrl as string],
   // dataSchemaで指定可能なものは以下のURL参照
   // https://cloud.google.com/generative-ai-app-builder/docs/create-data-store-es?hl=ja#storage-import-once
   dataSchema: "custom",

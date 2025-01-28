@@ -12,9 +12,22 @@ const branch = "default_branch"; // 固定値?
 
 // データセットGCSインポート用
 const gcsBucketInputUrl = process.env.GCS_BUCKET_INPUT_URL;
+const gcsMediaFolderUrl = process.env.GCS_MEDIA_FOLDER_URL;
+const gcsMetadataFileUrl = process.env.GCS_METADATA_FILE_URL;
 
 // データセットBigQueryインポート用
 const datasetId = process.env.BIGQUERY_DATASET_ID;
 const tableId = process.env.BIGQUERY_TABLE_ID;
 
-export { project, location, dataStoreId, collection, branch, gcsBucketInputUrl, datasetId, tableId };
+export {
+  project,
+  location,
+  dataStoreId,
+  collection,
+  branch,
+  gcsBucketInputUrl,
+  gcsMediaFolderUrl,
+  gcsMetadataFileUrl,
+  datasetId,
+  tableId,
+};
