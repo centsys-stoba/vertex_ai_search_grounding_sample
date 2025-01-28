@@ -1,0 +1,1 @@
+{"lookerQuery": { "fields": <string[]>, "filters": <Hash[string]>, "sorts": <string[]>, "limit": <integer>, pivots: <string[]>, "vis_config": { "type": <string> }, "content": <string>}

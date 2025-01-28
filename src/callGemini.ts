@@ -54,7 +54,33 @@ const generativeModel = vertex_ai.preview.getGenerativeModel({
 async function generateContent() {
   const req = {
     contents: [
-      { role: "user", parts: [{ text: `ユーザーデータのサンプルを表示` }] },
+      {
+        role: "user",
+        parts: [
+          {
+            text: `
+Context
+----------
+あなたはLookerに対するクエリを指示する文章を、Looker SDKで適用可能なパラメータに変換する役割を持っています。
+以下の条件に従って回答を出力してください。
+条件:
+- 回答の対象となるユーザーからの質問は Input を参照してください
+- 回答は Output に続く形で出力してください
+- 回答は format.txt に従った JSONL 形式の文字列で出力してください
+- クエリパラメータに用いるフィールドは lookml_metadata.txt を参考にしてください
+- 質問とそれに対するクエリパラメータの例として example.txt を参考にしてください
+- 回答の content にクエリの要約文章を挿入してください
+
+Input
+----------
+ブランドごとの注文数トップ50を棒グラフで可視化してください
+
+Output
+----------
+    `,
+          },
+        ],
+      },
     ],
   };
 

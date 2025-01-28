@@ -7,7 +7,7 @@ import {
   branch,
   datasetId,
   tableId,
-} from "./utils/loadEnv";
+} from "../utils/loadEnv";
 
 /**
  * This snippet has been automatically generated and should be regarded as a code template only.

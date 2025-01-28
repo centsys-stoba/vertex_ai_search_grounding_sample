@@ -5,7 +5,7 @@ import {
   dataStoreId,
   collection,
   branch,
-} from "./utils/loadEnv";
+} from "../utils/loadEnv";
 
 /**
  * This snippet has been automatically generated and should be regarded as a code template only.
@@ -24,7 +24,7 @@ const gcsSource = {
   inputUris: [process.env.GCS_BUCKET_INPUT_URL as string],
   // dataSchemaで指定可能なものは以下のURL参照
   // https://cloud.google.com/generative-ai-app-builder/docs/create-data-store-es?hl=ja#storage-import-once
-  dataSchema: "custom",
+  dataSchema: "content",
 };
 /**
  *  BigQuery input source.
@@ -137,11 +137,9 @@ const discoveryengineClient = new DocumentServiceClient();
 
 async function callImportDocuments() {
   // Construct request
-  // GCSからJSONLの取り込み, IDの自動発番
   const request = {
     parent,
     gcsSource,
-    autoGenerateIds,
   };
 
   // Run request

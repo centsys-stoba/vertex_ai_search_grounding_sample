@@ -1,0 +1,9 @@
+以下は dimensions であり、グルーピングに用いられます
+name: products.brand, type: string, label: Products Brand
+name: products.category, type: string, label: Products Category
+name: products.cost, type: number, label: Products Cost
+
+以下は measures であり、集計に用いられます
+name: order_items.min_sales_price, type: min, label: Order Items Min Sales Price
+name: order_items.total_sale_price, type: sum, label: Order Items Total Sale Price
+name: orders.count, type: count, label: Orders Count

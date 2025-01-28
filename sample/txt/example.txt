@@ -1,0 +1,1 @@
+input: "売上トップ10のブランド" ; lookerQuery: {"fields": "products.brand,order_items.total_sale_price", "sorts": ["order_items.total_sale_price desc"], "pivots": [], "limit": 10, filters: {}, , "vis_config: { "type": "table" }}
