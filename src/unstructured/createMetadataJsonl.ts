@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { gcsMediaFolderUrl } from "./utils/loadEnv";
+import { gcsMediaFolderUrl } from "../utils/loadEnv";
 
 // サンプルデータ
 const data = [
